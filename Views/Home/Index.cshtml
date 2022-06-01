@@ -1,0 +1,18 @@
+﻿@model IEnumerable<Pie>
+
+@{
+    ViewBag.Title = "Candy Shop Home";
+}
+<partial name="_Carousel" />
+
+<h2 style="color:snow;">Pies of the week</h2>
+<h4 style="color:snow;">Our weekly selection - just for you!</h4>
+
+<div class="row">
+
+    @foreach (var pie in Model)
+    {
+        <partial name="_PieCard" model="pie" />
+    }
+
+</div>

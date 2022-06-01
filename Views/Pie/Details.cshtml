@@ -1,0 +1,28 @@
+﻿@model Pie
+@{
+    ViewBag.Title = Model.Name;
+}
+<h3 style="color:snow;font-size:30px">@Model.Name</h3>
+<a asp-controller="Pie" asp-action="List" style="font-size:15px">
+    <span>&#8592;</span>
+    Back To List
+</a>
+
+<div class="thumbnail">
+    <img alt="@Model.Name" src="@Model.ImageUrl">
+    <div class="caption-full">
+        <h3 class="pull-right">@Model.Price</h3>
+        <h3>
+            <a>@Model.Name</a>
+        </h3>
+        <p>@Model.Category.CategoryName</p>
+        <h4>@Model.ShortDescription</h4>
+        <p>@Model.LongDescription</p>
+        <div class="addToCart">
+            <p class="button">
+                <a class="btn btn-primary" asp-controller="ShoppingCart" asp-action="AddToShoppingCart"
+                   asp-route-pieId="@Model.PieId">Add to cart</a>
+            </p>
+        </div>
+    </div>
+</div>
